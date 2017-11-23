@@ -140,6 +140,27 @@
   <ItemGroup>
     <None Include="bin\Debug\F_M_W.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F_C_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F_F_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\F_M_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\M_C_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\M_F_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\M_M_S.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Z.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

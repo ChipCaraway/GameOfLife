@@ -24,13 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -71,15 +69,47 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label58 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -96,6 +126,8 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Black
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -103,9 +135,77 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Configure Life (per Yearly Round)"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Black
+        Me.GroupBox1.Controls.Add(Me.CheckBox7)
+        Me.GroupBox1.Controls.Add(Me.CheckBox6)
+        Me.GroupBox1.Controls.Add(Me.CheckBox5)
+        Me.GroupBox1.Controls.Add(Me.CheckBox4)
+        Me.GroupBox1.Controls.Add(Me.CheckBox3)
+        Me.GroupBox1.Controls.Add(Me.CheckBox2)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Yellow
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(379, 309)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Universe Configuation Options"
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Checked = True
+        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox4.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox4.Location = New System.Drawing.Point(7, 89)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(176, 17)
+        Me.CheckBox4.TabIndex = 2
+        Me.CheckBox4.Text = "Post-Fertile Lifes do NOT move."
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox3.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox3.Location = New System.Drawing.Point(7, 43)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(242, 17)
+        Me.CheckBox3.TabIndex = 1
+        Me.CheckBox3.Text = "Offspring must touch either Parent until Fertile."
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Checked = True
+        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox2.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox2.Location = New System.Drawing.Point(7, 20)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(159, 17)
+        Me.CheckBox2.TabIndex = 0
+        Me.CheckBox2.Text = "Pairs that mate, mate for life."
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.Black
+        Me.TabPage2.Controls.Add(Me.Label58)
+        Me.TabPage2.Controls.Add(Me.Label55)
+        Me.TabPage2.Controls.Add(Me.Label56)
+        Me.TabPage2.Controls.Add(Me.Label57)
+        Me.TabPage2.Controls.Add(Me.Label54)
+        Me.TabPage2.Controls.Add(Me.Label53)
+        Me.TabPage2.Controls.Add(Me.Label52)
         Me.TabPage2.Controls.Add(Me.Label41)
         Me.TabPage2.Controls.Add(Me.Label42)
         Me.TabPage2.Controls.Add(Me.Label43)
@@ -160,78 +260,6 @@ Partial Class Form1
         Me.TabPage2.Size = New System.Drawing.Size(1292, 819)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Watch Life Happen . . ."
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.ForeColor = System.Drawing.Color.Gray
-        Me.Label41.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_F_W
-        Me.Label41.Location = New System.Drawing.Point(1019, 137)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(14, 14)
-        Me.Label41.TabIndex = 94
-        Me.Label41.Text = " "
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.ForeColor = System.Drawing.Color.Gray
-        Me.Label42.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_M_W
-        Me.Label42.Location = New System.Drawing.Point(1019, 150)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(14, 14)
-        Me.Label42.TabIndex = 93
-        Me.Label42.Text = " "
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.ForeColor = System.Drawing.Color.Gray
-        Me.Label43.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_C_W
-        Me.Label43.Location = New System.Drawing.Point(1019, 174)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(14, 14)
-        Me.Label43.TabIndex = 92
-        Me.Label43.Text = " "
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.Color.Gray
-        Me.Label44.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_F_W
-        Me.Label44.Location = New System.Drawing.Point(1019, 187)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(14, 14)
-        Me.Label44.TabIndex = 91
-        Me.Label44.Text = " "
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.Color.Gray
-        Me.Label45.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_M_W
-        Me.Label45.Location = New System.Drawing.Point(1019, 200)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(14, 14)
-        Me.Label45.TabIndex = 90
-        Me.Label45.Text = " "
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.ForeColor = System.Drawing.Color.Gray
-        Me.Label46.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_C_W
-        Me.Label46.Location = New System.Drawing.Point(1019, 124)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(14, 14)
-        Me.Label46.TabIndex = 89
-        Me.Label46.Text = " "
         '
         'Label21
         '
@@ -531,7 +559,7 @@ Partial Class Form1
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Gray
-        Me.Label18.Location = New System.Drawing.Point(1019, 286)
+        Me.Label18.Location = New System.Drawing.Point(1034, 284)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(56, 14)
         Me.Label18.TabIndex = 67
@@ -542,7 +570,7 @@ Partial Class Form1
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Gray
-        Me.Label19.Location = New System.Drawing.Point(1019, 299)
+        Me.Label19.Location = New System.Drawing.Point(1061, 298)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(56, 14)
         Me.Label19.TabIndex = 66
@@ -553,7 +581,7 @@ Partial Class Form1
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Gray
-        Me.Label20.Location = New System.Drawing.Point(1019, 312)
+        Me.Label20.Location = New System.Drawing.Point(1061, 312)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(56, 14)
         Me.Label20.TabIndex = 65
@@ -735,15 +763,6 @@ Partial Class Form1
         Me.Label1.TabIndex = 49
         Me.Label1.Text = "Label1"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1007, 807)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.Black
@@ -792,6 +811,374 @@ Partial Class Form1
         Me.CheckBox1.Text = "Pause at the End of Current Year"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Checked = True
+        Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox7.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox7.Location = New System.Drawing.Point(7, 66)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(171, 17)
+        Me.CheckBox7.TabIndex = 5
+        Me.CheckBox7.Text = "Pre-Fertile Lifes do NOT move."
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Checked = True
+        Me.CheckBox6.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox6.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox6.Location = New System.Drawing.Point(7, 135)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(270, 17)
+        Me.CheckBox6.TabIndex = 4
+        Me.CheckBox6.Text = "Fertile Non-Paired Lifes will move to first blank spot. "
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox5.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox5.Location = New System.Drawing.Point(7, 112)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(317, 17)
+        Me.CheckBox5.TabIndex = 3
+        Me.CheckBox5.Text = "Fertile Non-Paired Lifes will move to first FERTILE blank spot. "
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Black
+        Me.GroupBox2.Controls.Add(Me.CheckBox10)
+        Me.GroupBox2.Controls.Add(Me.CheckBox9)
+        Me.GroupBox2.Controls.Add(Me.Label51)
+        Me.GroupBox2.Controls.Add(Me.ComboBox3)
+        Me.GroupBox2.Controls.Add(Me.Label50)
+        Me.GroupBox2.Controls.Add(Me.ComboBox2)
+        Me.GroupBox2.Controls.Add(Me.Label49)
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.Label47)
+        Me.GroupBox2.Controls.Add(Me.HScrollBar1)
+        Me.GroupBox2.Controls.Add(Me.CheckBox8)
+        Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Yellow
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 332)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(379, 154)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Universal Disease Configuation"
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox8.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox8.Location = New System.Drawing.Point(7, 19)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(112, 17)
+        Me.CheckBox8.TabIndex = 1
+        Me.CheckBox8.Text = "Introduce Disease"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'HScrollBar1
+        '
+        Me.HScrollBar1.LargeChange = 1
+        Me.HScrollBar1.Location = New System.Drawing.Point(7, 71)
+        Me.HScrollBar1.Minimum = 1
+        Me.HScrollBar1.Name = "HScrollBar1"
+        Me.HScrollBar1.Size = New System.Drawing.Size(360, 11)
+        Me.HScrollBar1.TabIndex = 2
+        Me.HScrollBar1.Value = 1
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.ForeColor = System.Drawing.Color.Silver
+        Me.Label47.Location = New System.Drawing.Point(6, 49)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(163, 13)
+        Me.Label47.TabIndex = 3
+        Me.Label47.Text = "Select a Distinct Seed (1 to 100):"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.ForeColor = System.Drawing.Color.White
+        Me.Label48.Location = New System.Drawing.Point(175, 49)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(14, 13)
+        Me.Label48.TabIndex = 4
+        Me.Label48.Text = "1"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.Black
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"One Life (1)", "Two Lives (2)", "Three Lives (3)", "Four Lives (4)", "Five Lives (5)", "Six Lives (6)", "Seven Lives (7)", "Eight Lives (8)", "Nine Lives (9)", "Ten Lives (10)"})
+        Me.ComboBox1.Location = New System.Drawing.Point(9, 115)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(110, 21)
+        Me.ComboBox1.TabIndex = 5
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.ForeColor = System.Drawing.Color.Silver
+        Me.Label49.Location = New System.Drawing.Point(6, 99)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(108, 13)
+        Me.Label49.TabIndex = 6
+        Me.Label49.Text = "Lifes Initially Infected:"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.ForeColor = System.Drawing.Color.Silver
+        Me.Label50.Location = New System.Drawing.Point(131, 99)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(93, 13)
+        Me.Label50.TabIndex = 8
+        Me.Label50.Text = "Incubation Period:"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.Black
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"One Year (1)", "Two Years (2)", "Three Years (3)", "Four Years (4)", "Five Years (5)", "Six Years (6)", "Seven Years (7)", "Eight Years (8)", "Nine Years (9)", "Ten Years (10)"})
+        Me.ComboBox2.Location = New System.Drawing.Point(134, 115)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(110, 21)
+        Me.ComboBox2.TabIndex = 7
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.ForeColor = System.Drawing.Color.Silver
+        Me.Label51.Location = New System.Drawing.Point(254, 99)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(85, 13)
+        Me.Label51.TabIndex = 10
+        Me.Label51.Text = "Contagiousness:"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.Color.Black
+        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox3.ForeColor = System.Drawing.Color.White
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Light (25%)", "Moderate (50%)", "High (75%)", "OMG (90%)"})
+        Me.ComboBox3.Location = New System.Drawing.Point(257, 115)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(110, 21)
+        Me.ComboBox3.TabIndex = 9
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Checked = True
+        Me.CheckBox9.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox9.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox9.Location = New System.Drawing.Point(178, 19)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox9.TabIndex = 11
+        Me.CheckBox9.Text = "Affects Males"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox10.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox10.Location = New System.Drawing.Point(277, 19)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(101, 17)
+        Me.CheckBox10.TabIndex = 12
+        Me.CheckBox10.Text = "Affects Females"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label55.ForeColor = System.Drawing.Color.Gray
+        Me.Label55.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_M_S
+        Me.Label55.Location = New System.Drawing.Point(1041, 298)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(14, 14)
+        Me.Label55.TabIndex = 100
+        Me.Label55.Text = " "
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.ForeColor = System.Drawing.Color.Gray
+        Me.Label56.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_F_S
+        Me.Label56.Location = New System.Drawing.Point(1030, 298)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(14, 14)
+        Me.Label56.TabIndex = 99
+        Me.Label56.Text = " "
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.ForeColor = System.Drawing.Color.Gray
+        Me.Label57.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_C_S
+        Me.Label57.Location = New System.Drawing.Point(1019, 298)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(14, 14)
+        Me.Label57.TabIndex = 98
+        Me.Label57.Text = " "
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.ForeColor = System.Drawing.Color.Gray
+        Me.Label54.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_M_S
+        Me.Label54.Location = New System.Drawing.Point(1041, 312)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(14, 14)
+        Me.Label54.TabIndex = 97
+        Me.Label54.Text = " "
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.ForeColor = System.Drawing.Color.Gray
+        Me.Label53.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_F_S
+        Me.Label53.Location = New System.Drawing.Point(1030, 312)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(14, 14)
+        Me.Label53.TabIndex = 96
+        Me.Label53.Text = " "
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.ForeColor = System.Drawing.Color.Gray
+        Me.Label52.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_C_S
+        Me.Label52.Location = New System.Drawing.Point(1019, 312)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(14, 14)
+        Me.Label52.TabIndex = 95
+        Me.Label52.Text = " "
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.Gray
+        Me.Label41.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_F_W
+        Me.Label41.Location = New System.Drawing.Point(1019, 137)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(14, 14)
+        Me.Label41.TabIndex = 94
+        Me.Label41.Text = " "
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.Gray
+        Me.Label42.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_M_W
+        Me.Label42.Location = New System.Drawing.Point(1019, 150)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(14, 14)
+        Me.Label42.TabIndex = 93
+        Me.Label42.Text = " "
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.Color.Gray
+        Me.Label43.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_C_W
+        Me.Label43.Location = New System.Drawing.Point(1019, 174)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(14, 14)
+        Me.Label43.TabIndex = 92
+        Me.Label43.Text = " "
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.Color.Gray
+        Me.Label44.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_F_W
+        Me.Label44.Location = New System.Drawing.Point(1019, 187)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(14, 14)
+        Me.Label44.TabIndex = 91
+        Me.Label44.Text = " "
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.Color.Gray
+        Me.Label45.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_M_W
+        Me.Label45.Location = New System.Drawing.Point(1019, 200)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(14, 14)
+        Me.Label45.TabIndex = 90
+        Me.Label45.Text = " "
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.ForeColor = System.Drawing.Color.Gray
+        Me.Label46.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_C_W
+        Me.Label46.Location = New System.Drawing.Point(1019, 124)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(14, 14)
+        Me.Label46.TabIndex = 89
+        Me.Label46.Text = " "
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1007, 807)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label58.ForeColor = System.Drawing.Color.Gray
+        Me.Label58.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.Z
+        Me.Label58.Location = New System.Drawing.Point(1019, 286)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(14, 14)
+        Me.Label58.TabIndex = 101
+        Me.Label58.Text = " "
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -803,12 +1190,18 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.ForeColor = System.Drawing.Color.Lime
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "The Game of Life v.1.01"
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -868,4 +1261,31 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Label47 As Label
+    Friend WithEvents HScrollBar1 As HScrollBar
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents Label49 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label50 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents Label51 As Label
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label54 As Label
+    Friend WithEvents Label53 As Label
+    Friend WithEvents Label52 As Label
+    Friend WithEvents Label55 As Label
+    Friend WithEvents Label56 As Label
+    Friend WithEvents Label57 As Label
+    Friend WithEvents Label58 As Label
 End Class

@@ -57,6 +57,9 @@
         Counts(14, 0) = "Mated Pairs"
         Counts(15, 0) = "Births"
         Counts(16, 0) = "Deaths"
+        Counts(17, 0) = "Terminally Infected"
+        Counts(18, 0) = "Infected Males"
+        Counts(19, 0) = "Infected Females"
 
         Counts(0, 1) = "0"
         Counts(1, 1) = "0"
@@ -75,6 +78,9 @@
         Counts(14, 1) = "0"
         Counts(15, 1) = "0"
         Counts(16, 1) = "0"
+        Counts(17, 1) = "0"
+        Counts(18, 1) = "0"
+        Counts(19, 1) = "0"
 
         Label1.Text = Counts(0, 0) + StrDup(30 - Len(Counts(0, 0)), ".")
         Label2.Text = Counts(1, 0) + StrDup(30 - Len(Counts(1, 0)), ".")
@@ -93,9 +99,9 @@
         Label15.Text = Counts(14, 0) + StrDup(30 - Len(Counts(14, 0)), ".")
         Label16.Text = Counts(15, 0) + StrDup(30 - Len(Counts(15, 0)), ".")
         Label17.Text = Counts(16, 0) + StrDup(30 - Len(Counts(16, 0)), ".")
-        Label18.Text = "" 'Counts(17, 0) + StrDup(30 - Len(Counts(17, 0)), ".")
-        Label19.Text = "" 'Counts(18, 0) + StrDup(30 - Len(Counts(18, 0)), ".")
-        Label20.Text = "" 'Counts(19, 0) + StrDup(30 - Len(Counts(19, 0)), ".")
+        Label18.Text = Counts(17, 0) + StrDup(30 - Len(Counts(17, 0)), ".")
+        Label19.Text = Counts(18, 0) + StrDup(25 - Len(Counts(18, 0)), ".")
+        Label20.Text = Counts(19, 0) + StrDup(25 - Len(Counts(19, 0)), ".")
 
         Label21.Text = StrDup(7 - Len(Counts(0, 1)), " ") + Counts(0, 1)
         Label22.Text = StrDup(7 - Len(Counts(1, 1)), " ") + Counts(1, 1)
@@ -114,9 +120,9 @@
         Label35.Text = StrDup(7 - Len(Counts(14, 1)), " ") + Counts(14, 1)
         Label36.Text = StrDup(7 - Len(Counts(15, 1)), " ") + Counts(15, 1)
         Label37.Text = StrDup(7 - Len(Counts(16, 1)), " ") + Counts(16, 1)
-        Label38.Text = "" 'StrDup(7 - Len(Counts(17, 1)), " ") + Counts(17, 1)
-        Label39.Text = "" 'StrDup(7 - Len(Counts(18, 1)), " ") + Counts(18, 1)
-        Label40.Text = "" 'StrDup(7 - Len(Counts(19, 1)), " ") + Counts(19, 1)
+        Label38.Text = StrDup(7 - Len(Counts(17, 1)), " ") + Counts(17, 1)
+        Label39.Text = StrDup(7 - Len(Counts(18, 1)), " ") + Counts(18, 1)
+        Label40.Text = StrDup(7 - Len(Counts(19, 1)), " ") + Counts(19, 1)
 
         FileOpen(1, "Male.First.txt", OpenMode.Input)
         While Not EOF(1)
@@ -150,6 +156,7 @@
 
         GFX.FillRectangle(Brushes.Black, 0, 0, 1000, 800)
         PictureBox1.Image = BMP
+        Label48.Text = "1"
 
     End Sub
 
@@ -465,5 +472,10 @@ BAIL_OUT:
 
     End Function
 
+    Private Sub HScrollBar1_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar1.Scroll
+
+        Label48.Text = HScrollBar1.Value
+
+    End Sub
 
 End Class

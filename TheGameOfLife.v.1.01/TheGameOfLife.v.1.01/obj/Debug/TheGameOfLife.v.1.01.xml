@@ -22,7 +22,17 @@ TheGameOfLife.v.1.01
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.F_C_S">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.F_C_W">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.F_F_S">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -32,7 +42,17 @@ TheGameOfLife.v.1.01
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.F_M_S">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.F_M_W">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.M_C_S">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -42,12 +62,27 @@ TheGameOfLife.v.1.01
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.M_F_S">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.M_F_W">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.M_M_S">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.M_M_W">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.Z">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
