@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label70.Text" xml:space="preserve">
+    <value>This tab is how Life is Configured.  If the checkbox is checked to "Pause at the End of Current Year," any updates to configurations on this tab will be read and applied during the operation of the next round (year).  This can be how disease is introduced.</value>
+  </data>
 </root>

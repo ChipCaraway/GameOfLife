@@ -19,10 +19,40 @@
         Dim CurrentTop As String
     End Structure
 
+    Structure GlobalAge
+        Dim MaxAge As Single
+        Dim MaleChild As Single
+        Dim MaleFertile As Single
+        Dim MalePostFertile As Single
+        Dim FemaleChild As Single
+        Dim FemaleFertile As Single
+        Dim FemalePostFertile As Single
+    End Structure
+
+    Structure GlobalConfig
+        Dim PairsForLife As Boolean
+        Dim OffspringTouchesParent As Boolean
+        Dim PreFertileDoesNotMove As Boolean
+        Dim PostFertileDoesNotMove As Boolean
+        Dim NonPairedMovesToFertileSpot As Boolean
+        Dim NonPairedMovesToNextSpot As Boolean
+        Dim AccidentalDeath As Boolean
+    End Structure
+
+    Structure GlobalDisease
+        Dim IntroduceDisease As Boolean
+        Dim AffectsMales As Boolean
+        Dim AffectsFemales As Boolean
+        Dim LivesInitiallyInfected As Single
+        Dim IncubationPeriod As Single
+        Dim Contagiosness As Double
+    End Structure
+
     Dim BMP As New Drawing.Bitmap(1000, 800)
     Dim GFX As Graphics = Graphics.FromImage(BMP)
     Public LastTop As Integer = 0
     Public LastLeft As Integer = 0
+    Public Age(1) As GlobalAge
     Public Universe(1000, 800) As Person
     Public Counts(1000, 1) As String
     Public FFname(100000) As String
@@ -157,7 +187,19 @@
         GFX.FillRectangle(Brushes.Black, 0, 0, 1000, 800)
         PictureBox1.Image = BMP
         Label48.Text = Format(HScrollBar1.Value, "#,##0")
-        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Years of Age"
+        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Units of Age"
+        HScrollBar3.Maximum = HScrollBar2.Value
+        HScrollBar4.Maximum = HScrollBar2.Value
+        lblMaleChild.Text = "From 0 to " + Format(HScrollBar3.Value, "#,##0")
+        lblMaleFertile.Text = "From " + Format(HScrollBar3.Value + 1, "#,##0") + " to " + Format(HScrollBar4.Value - 1, "#,##0")
+        lblMalePostFertile.Text = "From " + Format(HScrollBar4.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+
+        Age(0).MaleChild = 0
+        Age(1).MaleChild = HScrollBar3.Value
+        Age(0).MaleFertile = HScrollBar3.Value + 1
+        Age(1).MaleFertile = HScrollBar4.Value - 1
+        Age(0).MalePostFertile = HScrollBar4.Value
+        Age(1).MalePostFertile = HScrollBar2.Value
 
 
     End Sub
@@ -482,8 +524,74 @@ BAIL_OUT:
 
     Private Sub HScrollBar2_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar2.Scroll
 
-        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Years of Age"
+        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Units of Age"
+        HScrollBar3.Maximum = HScrollBar2.Value
         HScrollBar4.Maximum = HScrollBar2.Value
+        lblMaleChild.Text = "From 0 to " + Format(HScrollBar3.Value, "#,##0")
+        lblMaleFertile.Text = "From " + Format(HScrollBar3.Value + 1, "#,##0") + " to " + Format(HScrollBar4.Value - 1, "#,##0")
+        lblMalePostFertile.Text = "From " + Format(HScrollBar4.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+        HScrollBar5.Maximum = HScrollBar2.Value
+        HScrollBar6.Maximum = HScrollBar2.Value
+        lblFemaleChild.Text = "From 0 to " + Format(HScrollBar5.Value, "#,##0")
+        lblFemaleFertile.Text = "From " + Format(HScrollBar5.Value + 1, "#,##0") + " to " + Format(HScrollBar6.Value - 1, "#,##0")
+        lblFemalePostFertile.Text = "From " + Format(HScrollBar6.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+
+
+    End Sub
+
+    Private Sub HScrollBar3_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar3.Scroll
+
+Check_Again:
+        If HScrollBar4.Value - HScrollBar3.Value < 3 Then
+            If HScrollBar4.Value < HScrollBar4.Maximum Then
+                HScrollBar4.Value = HScrollBar4.Value + 1
+                GoTo Check_Again
+            End If
+        End If
+        lblMaleChild.Text = "From 0 to " + Format(HScrollBar3.Value, "#,##0")
+        lblMaleFertile.Text = "From " + Format(HScrollBar3.Value + 1, "#,##0") + " to " + Format(HScrollBar4.Value - 1, "#,##0")
+        lblMalePostFertile.Text = "From " + Format(HScrollBar4.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+
+    End Sub
+
+    Private Sub HScrollBar4_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar4.Scroll
+
+Check_Again:
+        If HScrollBar4.Value - HScrollBar3.Value < 3 Then
+            HScrollBar3.Value = HScrollBar3.Value - 1
+            GoTo Check_Again
+        End If
+        lblMaleChild.Text = "From 0 to " + Format(HScrollBar3.Value, "#,##0")
+        lblMaleFertile.Text = "From " + Format(HScrollBar3.Value + 1, "#,##0") + " to " + Format(HScrollBar4.Value - 1, "#,##0")
+        lblMalePostFertile.Text = "From " + Format(HScrollBar4.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+
+    End Sub
+
+    Private Sub HScrollBar5_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar5.Scroll
+
+Check_Again:
+        If HScrollBar6.Value - HScrollBar5.Value < 3 Then
+            If HScrollBar6.Value < HScrollBar6.Maximum Then
+                HScrollBar6.Value = HScrollBar6.Value + 1
+                GoTo Check_Again
+            End If
+        End If
+        lblFemaleChild.Text = "From 0 to " + Format(HScrollBar5.Value, "#,##0")
+        lblFemaleFertile.Text = "From " + Format(HScrollBar5.Value + 1, "#,##0") + " to " + Format(HScrollBar6.Value - 1, "#,##0")
+        lblFemalePostFertile.Text = "From " + Format(HScrollBar6.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+
+    End Sub
+
+    Private Sub HScrollBar6_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar6.Scroll
+
+Check_Again:
+        If HScrollBar6.Value - HScrollBar5.Value < 3 Then
+            HScrollBar5.Value = HScrollBar5.Value - 1
+            GoTo Check_Again
+        End If
+        lblFemaleChild.Text = "From 0 to " + Format(HScrollBar5.Value, "#,##0")
+        lblFemaleFertile.Text = "From " + Format(HScrollBar5.Value + 1, "#,##0") + " to " + Format(HScrollBar6.Value - 1, "#,##0")
+        lblFemalePostFertile.Text = "From " + Format(HScrollBar6.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
 
     End Sub
 
