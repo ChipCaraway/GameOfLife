@@ -156,7 +156,9 @@
 
         GFX.FillRectangle(Brushes.Black, 0, 0, 1000, 800)
         PictureBox1.Image = BMP
-        Label48.Text = "1"
+        Label48.Text = Format(HScrollBar1.Value, "#,##0")
+        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Years of Age"
+
 
     End Sub
 
@@ -477,5 +479,14 @@ BAIL_OUT:
         Label48.Text = HScrollBar1.Value
 
     End Sub
+
+    Private Sub HScrollBar2_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar2.Scroll
+
+        Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Years of Age"
+        HScrollBar4.Maximum = HScrollBar2.Value
+
+    End Sub
+
+
 
 End Class
