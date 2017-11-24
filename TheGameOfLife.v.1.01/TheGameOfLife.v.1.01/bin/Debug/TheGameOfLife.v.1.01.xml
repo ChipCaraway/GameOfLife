@@ -87,5 +87,10 @@ TheGameOfLife.v.1.01
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TheGameOfLife.v._1._01.My.Resources.Resources.Z1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

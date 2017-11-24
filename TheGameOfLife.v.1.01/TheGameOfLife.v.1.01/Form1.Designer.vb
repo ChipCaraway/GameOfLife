@@ -27,6 +27,15 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label70 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label80 = New System.Windows.Forms.Label()
+        Me.lblFemalePostFertile = New System.Windows.Forms.Label()
+        Me.lblFemaleFertile = New System.Windows.Forms.Label()
+        Me.lblFemaleChild = New System.Windows.Forms.Label()
+        Me.HScrollBar5 = New System.Windows.Forms.HScrollBar()
+        Me.HScrollBar6 = New System.Windows.Forms.HScrollBar()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.Label71 = New System.Windows.Forms.Label()
         Me.Label77 = New System.Windows.Forms.Label()
         Me.Label76 = New System.Windows.Forms.Label()
         Me.Label72 = New System.Windows.Forms.Label()
@@ -51,6 +60,16 @@ Partial Class Form1
         Me.Label60 = New System.Windows.Forms.Label()
         Me.HScrollBar2 = New System.Windows.Forms.HScrollBar()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.Label82 = New System.Windows.Forms.Label()
+        Me.Label81 = New System.Windows.Forms.Label()
+        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
         Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.Label51 = New System.Windows.Forms.Label()
@@ -130,17 +149,6 @@ Partial Class Form1
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.Label71 = New System.Windows.Forms.Label()
-        Me.Label78 = New System.Windows.Forms.Label()
-        Me.Label79 = New System.Windows.Forms.Label()
-        Me.lblFemalePostFertile = New System.Windows.Forms.Label()
-        Me.lblFemaleFertile = New System.Windows.Forms.Label()
-        Me.lblFemaleChild = New System.Windows.Forms.Label()
-        Me.HScrollBar5 = New System.Windows.Forms.HScrollBar()
-        Me.HScrollBar6 = New System.Windows.Forms.HScrollBar()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -188,6 +196,7 @@ Partial Class Form1
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Black
+        Me.GroupBox3.Controls.Add(Me.Label80)
         Me.GroupBox3.Controls.Add(Me.lblFemalePostFertile)
         Me.GroupBox3.Controls.Add(Me.lblFemaleFertile)
         Me.GroupBox3.Controls.Add(Me.lblFemaleChild)
@@ -221,13 +230,110 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.HScrollBar2)
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Yellow
-        Me.GroupBox3.Location = New System.Drawing.Point(406, 6)
+        Me.GroupBox3.ForeColor = System.Drawing.Color.Gold
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 333)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(386, 309)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Define Age Ranges of Fertile vs. Non-Fertile Lives"
+        '
+        'Label80
+        '
+        Me.Label80.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label80.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label80.Location = New System.Drawing.Point(15, 212)
+        Me.Label80.Name = "Label80"
+        Me.Label80.Size = New System.Drawing.Size(361, 85)
+        Me.Label80.TabIndex = 127
+        Me.Label80.Text = resources.GetString("Label80.Text")
+        '
+        'lblFemalePostFertile
+        '
+        Me.lblFemalePostFertile.AutoSize = True
+        Me.lblFemalePostFertile.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFemalePostFertile.ForeColor = System.Drawing.Color.Magenta
+        Me.lblFemalePostFertile.Location = New System.Drawing.Point(292, 170)
+        Me.lblFemalePostFertile.Name = "lblFemalePostFertile"
+        Me.lblFemalePostFertile.Size = New System.Drawing.Size(76, 16)
+        Me.lblFemalePostFertile.TabIndex = 126
+        Me.lblFemalePostFertile.Text = "From 51 to 100"
+        '
+        'lblFemaleFertile
+        '
+        Me.lblFemaleFertile.AutoSize = True
+        Me.lblFemaleFertile.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFemaleFertile.ForeColor = System.Drawing.Color.Magenta
+        Me.lblFemaleFertile.Location = New System.Drawing.Point(160, 170)
+        Me.lblFemaleFertile.Name = "lblFemaleFertile"
+        Me.lblFemaleFertile.Size = New System.Drawing.Size(71, 16)
+        Me.lblFemaleFertile.TabIndex = 125
+        Me.lblFemaleFertile.Text = "From 17 to 50"
+        '
+        'lblFemaleChild
+        '
+        Me.lblFemaleChild.AutoSize = True
+        Me.lblFemaleChild.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFemaleChild.ForeColor = System.Drawing.Color.Magenta
+        Me.lblFemaleChild.Location = New System.Drawing.Point(35, 170)
+        Me.lblFemaleChild.Name = "lblFemaleChild"
+        Me.lblFemaleChild.Size = New System.Drawing.Size(66, 16)
+        Me.lblFemaleChild.TabIndex = 124
+        Me.lblFemaleChild.Text = "From 0 to 16"
+        '
+        'HScrollBar5
+        '
+        Me.HScrollBar5.LargeChange = 1
+        Me.HScrollBar5.Location = New System.Drawing.Point(16, 189)
+        Me.HScrollBar5.Maximum = 1000
+        Me.HScrollBar5.Name = "HScrollBar5"
+        Me.HScrollBar5.Size = New System.Drawing.Size(158, 11)
+        Me.HScrollBar5.TabIndex = 123
+        Me.HScrollBar5.Value = 16
+        '
+        'HScrollBar6
+        '
+        Me.HScrollBar6.LargeChange = 1
+        Me.HScrollBar6.Location = New System.Drawing.Point(205, 189)
+        Me.HScrollBar6.Maximum = 1000
+        Me.HScrollBar6.Minimum = 4
+        Me.HScrollBar6.Name = "HScrollBar6"
+        Me.HScrollBar6.Size = New System.Drawing.Size(171, 11)
+        Me.HScrollBar6.TabIndex = 122
+        Me.HScrollBar6.Value = 51
+        '
+        'Label79
+        '
+        Me.Label79.AutoSize = True
+        Me.Label79.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label79.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label79.Location = New System.Drawing.Point(308, 144)
+        Me.Label79.Name = "Label79"
+        Me.Label79.Size = New System.Drawing.Size(41, 13)
+        Me.Label79.TabIndex = 121
+        Me.Label79.Text = "Female"
+        '
+        'Label78
+        '
+        Me.Label78.AutoSize = True
+        Me.Label78.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label78.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label78.Location = New System.Drawing.Point(171, 144)
+        Me.Label78.Name = "Label78"
+        Me.Label78.Size = New System.Drawing.Size(41, 13)
+        Me.Label78.TabIndex = 120
+        Me.Label78.Text = "Female"
+        '
+        'Label71
+        '
+        Me.Label71.AutoSize = True
+        Me.Label71.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label71.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label71.Location = New System.Drawing.Point(35, 144)
+        Me.Label71.Name = "Label71"
+        Me.Label71.Size = New System.Drawing.Size(41, 13)
+        Me.Label71.TabIndex = 119
+        Me.Label71.Text = "Female"
         '
         'Label77
         '
@@ -457,7 +563,7 @@ Partial Class Form1
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.ForeColor = System.Drawing.Color.White
+        Me.Label59.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label59.Location = New System.Drawing.Point(160, 27)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(14, 13)
@@ -468,7 +574,7 @@ Partial Class Form1
         '
         Me.Label60.AutoSize = True
         Me.Label60.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.ForeColor = System.Drawing.Color.Silver
+        Me.Label60.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label60.Location = New System.Drawing.Point(15, 27)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(139, 13)
@@ -489,6 +595,13 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Black
+        Me.GroupBox2.Controls.Add(Me.Label86)
+        Me.GroupBox2.Controls.Add(Me.Label87)
+        Me.GroupBox2.Controls.Add(Me.Label84)
+        Me.GroupBox2.Controls.Add(Me.Label85)
+        Me.GroupBox2.Controls.Add(Me.Label83)
+        Me.GroupBox2.Controls.Add(Me.Label82)
+        Me.GroupBox2.Controls.Add(Me.Label81)
         Me.GroupBox2.Controls.Add(Me.CheckBox14)
         Me.GroupBox2.Controls.Add(Me.CheckBox13)
         Me.GroupBox2.Controls.Add(Me.CheckBox12)
@@ -507,19 +620,147 @@ Partial Class Form1
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Lime
-        Me.GroupBox2.Location = New System.Drawing.Point(816, 6)
+        Me.GroupBox2.Location = New System.Drawing.Point(413, 6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(379, 226)
+        Me.GroupBox2.Size = New System.Drawing.Size(386, 204)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Universal Disease Configuation"
         '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label86.ForeColor = System.Drawing.Color.Gray
+        Me.Label86.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_M_S
+        Me.Label86.Location = New System.Drawing.Point(301, 83)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(14, 14)
+        Me.Label86.TabIndex = 110
+        Me.Label86.Text = " "
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label87.ForeColor = System.Drawing.Color.Gray
+        Me.Label87.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_M_S
+        Me.Label87.Location = New System.Drawing.Point(290, 83)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(14, 14)
+        Me.Label87.TabIndex = 109
+        Me.Label87.Text = " "
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label84.ForeColor = System.Drawing.Color.Gray
+        Me.Label84.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_F_S
+        Me.Label84.Location = New System.Drawing.Point(172, 83)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(14, 14)
+        Me.Label84.TabIndex = 108
+        Me.Label84.Text = " "
+        '
+        'Label85
+        '
+        Me.Label85.AutoSize = True
+        Me.Label85.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label85.ForeColor = System.Drawing.Color.Gray
+        Me.Label85.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_F_S
+        Me.Label85.Location = New System.Drawing.Point(161, 83)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(14, 14)
+        Me.Label85.TabIndex = 107
+        Me.Label85.Text = " "
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label83.ForeColor = System.Drawing.Color.Gray
+        Me.Label83.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.F_C_S
+        Me.Label83.Location = New System.Drawing.Point(39, 83)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(14, 14)
+        Me.Label83.TabIndex = 106
+        Me.Label83.Text = " "
+        '
+        'Label82
+        '
+        Me.Label82.AutoSize = True
+        Me.Label82.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label82.ForeColor = System.Drawing.Color.Gray
+        Me.Label82.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.M_C_S
+        Me.Label82.Location = New System.Drawing.Point(28, 83)
+        Me.Label82.Name = "Label82"
+        Me.Label82.Size = New System.Drawing.Size(14, 14)
+        Me.Label82.TabIndex = 105
+        Me.Label82.Text = " "
+        '
+        'Label81
+        '
+        Me.Label81.AutoSize = True
+        Me.Label81.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label81.ForeColor = System.Drawing.Color.Gray
+        Me.Label81.Image = Global.TheGameOfLife.v._1._01.My.Resources.Resources.Z1
+        Me.Label81.Location = New System.Drawing.Point(140, 20)
+        Me.Label81.Name = "Label81"
+        Me.Label81.Size = New System.Drawing.Size(14, 14)
+        Me.Label81.TabIndex = 104
+        Me.Label81.Text = " "
+        '
+        'CheckBox14
+        '
+        Me.CheckBox14.AutoSize = True
+        Me.CheckBox14.Checked = True
+        Me.CheckBox14.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox14.ForeColor = System.Drawing.Color.Lime
+        Me.CheckBox14.Location = New System.Drawing.Point(268, 65)
+        Me.CheckBox14.Name = "CheckBox14"
+        Me.CheckBox14.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox14.TabIndex = 15
+        Me.CheckBox14.Text = "Affects Elderly"
+        Me.CheckBox14.UseVisualStyleBackColor = True
+        '
+        'CheckBox13
+        '
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.Checked = True
+        Me.CheckBox13.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox13.ForeColor = System.Drawing.Color.Lime
+        Me.CheckBox13.Location = New System.Drawing.Point(143, 65)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox13.TabIndex = 14
+        Me.CheckBox13.Text = "Affects Fertile"
+        Me.CheckBox13.UseVisualStyleBackColor = True
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.Checked = True
+        Me.CheckBox12.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox12.ForeColor = System.Drawing.Color.Lime
+        Me.CheckBox12.Location = New System.Drawing.Point(9, 65)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(100, 17)
+        Me.CheckBox12.TabIndex = 13
+        Me.CheckBox12.Text = "Affects Children"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Checked = True
+        Me.CheckBox10.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox10.ForeColor = System.Drawing.Color.Silver
-        Me.CheckBox10.Location = New System.Drawing.Point(118, 40)
+        Me.CheckBox10.ForeColor = System.Drawing.Color.Lime
+        Me.CheckBox10.Location = New System.Drawing.Point(143, 42)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(101, 17)
         Me.CheckBox10.TabIndex = 12
@@ -532,7 +773,7 @@ Partial Class Form1
         Me.CheckBox9.Checked = True
         Me.CheckBox9.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox9.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox9.ForeColor = System.Drawing.Color.Lime
         Me.CheckBox9.Location = New System.Drawing.Point(8, 42)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(90, 17)
@@ -544,8 +785,8 @@ Partial Class Form1
         '
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.ForeColor = System.Drawing.Color.Silver
-        Me.Label51.Location = New System.Drawing.Point(254, 172)
+        Me.Label51.ForeColor = System.Drawing.Color.Lime
+        Me.Label51.Location = New System.Drawing.Point(254, 157)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(85, 13)
         Me.Label51.TabIndex = 10
@@ -555,20 +796,21 @@ Partial Class Form1
         '
         Me.ComboBox3.BackColor = System.Drawing.Color.Black
         Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox3.ForeColor = System.Drawing.Color.White
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.ForeColor = System.Drawing.Color.Lime
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Light (25%)", "Moderate (50%)", "High (75%)", "OMG (90%)"})
-        Me.ComboBox3.Location = New System.Drawing.Point(257, 188)
+        Me.ComboBox3.Location = New System.Drawing.Point(257, 173)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(110, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(123, 21)
         Me.ComboBox3.TabIndex = 9
         '
         'Label50
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.ForeColor = System.Drawing.Color.Silver
-        Me.Label50.Location = New System.Drawing.Point(131, 172)
+        Me.Label50.ForeColor = System.Drawing.Color.Lime
+        Me.Label50.Location = New System.Drawing.Point(131, 157)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(93, 13)
         Me.Label50.TabIndex = 8
@@ -578,10 +820,11 @@ Partial Class Form1
         '
         Me.ComboBox2.BackColor = System.Drawing.Color.Black
         Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.ForeColor = System.Drawing.Color.Lime
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"One Year (1)", "Two Years (2)", "Three Years (3)", "Four Years (4)", "Five Years (5)", "Six Years (6)", "Seven Years (7)", "Eight Years (8)", "Nine Years (9)", "Ten Years (10)"})
-        Me.ComboBox2.Location = New System.Drawing.Point(134, 188)
+        Me.ComboBox2.Location = New System.Drawing.Point(134, 173)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(110, 21)
         Me.ComboBox2.TabIndex = 7
@@ -590,8 +833,8 @@ Partial Class Form1
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.ForeColor = System.Drawing.Color.Silver
-        Me.Label49.Location = New System.Drawing.Point(6, 172)
+        Me.Label49.ForeColor = System.Drawing.Color.Lime
+        Me.Label49.Location = New System.Drawing.Point(6, 157)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(108, 13)
         Me.Label49.TabIndex = 6
@@ -601,10 +844,11 @@ Partial Class Form1
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.Black
         Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.Lime
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"One Life (1)", "Two Lives (2)", "Three Lives (3)", "Four Lives (4)", "Five Lives (5)", "Six Lives (6)", "Seven Lives (7)", "Eight Lives (8)", "Nine Lives (9)", "Ten Lives (10)"})
-        Me.ComboBox1.Location = New System.Drawing.Point(9, 188)
+        Me.ComboBox1.Location = New System.Drawing.Point(9, 173)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(110, 21)
         Me.ComboBox1.TabIndex = 5
@@ -612,8 +856,8 @@ Partial Class Form1
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.ForeColor = System.Drawing.Color.White
-        Me.Label48.Location = New System.Drawing.Point(292, 122)
+        Me.Label48.ForeColor = System.Drawing.Color.Lime
+        Me.Label48.Location = New System.Drawing.Point(292, 107)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(14, 13)
         Me.Label48.TabIndex = 4
@@ -623,8 +867,8 @@ Partial Class Form1
         '
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.ForeColor = System.Drawing.Color.Silver
-        Me.Label47.Location = New System.Drawing.Point(6, 122)
+        Me.Label47.ForeColor = System.Drawing.Color.Lime
+        Me.Label47.Location = New System.Drawing.Point(6, 107)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(280, 13)
         Me.Label47.TabIndex = 3
@@ -633,21 +877,21 @@ Partial Class Form1
         'HScrollBar1
         '
         Me.HScrollBar1.LargeChange = 1
-        Me.HScrollBar1.Location = New System.Drawing.Point(7, 144)
+        Me.HScrollBar1.Location = New System.Drawing.Point(7, 129)
         Me.HScrollBar1.Minimum = 1
         Me.HScrollBar1.Name = "HScrollBar1"
-        Me.HScrollBar1.Size = New System.Drawing.Size(360, 11)
+        Me.HScrollBar1.Size = New System.Drawing.Size(373, 11)
         Me.HScrollBar1.TabIndex = 2
         Me.HScrollBar1.Value = 1
         '
         'CheckBox8
         '
         Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox8.ForeColor = System.Drawing.Color.Lime
         Me.CheckBox8.Location = New System.Drawing.Point(7, 19)
         Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(112, 17)
+        Me.CheckBox8.Size = New System.Drawing.Size(129, 17)
         Me.CheckBox8.TabIndex = 1
         Me.CheckBox8.Text = "Introduce Disease"
         Me.CheckBox8.UseVisualStyleBackColor = True
@@ -664,10 +908,10 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.CheckBox2)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Yellow
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Gold
         Me.GroupBox1.Location = New System.Drawing.Point(6, 69)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(379, 246)
+        Me.GroupBox1.Size = New System.Drawing.Size(386, 246)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Universe Configuation Options"
@@ -678,7 +922,7 @@ Partial Class Form1
         Me.CheckBox11.Checked = True
         Me.CheckBox11.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox11.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox11.Location = New System.Drawing.Point(7, 158)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(301, 17)
@@ -692,7 +936,7 @@ Partial Class Form1
         Me.CheckBox7.Checked = True
         Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox7.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox7.Location = New System.Drawing.Point(7, 66)
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(174, 17)
@@ -706,7 +950,7 @@ Partial Class Form1
         Me.CheckBox6.Checked = True
         Me.CheckBox6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox6.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox6.Location = New System.Drawing.Point(7, 135)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(273, 17)
@@ -718,7 +962,7 @@ Partial Class Form1
         '
         Me.CheckBox5.AutoSize = True
         Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox5.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox5.Location = New System.Drawing.Point(7, 112)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(320, 17)
@@ -732,7 +976,7 @@ Partial Class Form1
         Me.CheckBox4.Checked = True
         Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox4.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox4.Location = New System.Drawing.Point(7, 89)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(179, 17)
@@ -746,7 +990,7 @@ Partial Class Form1
         Me.CheckBox3.Checked = True
         Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox3.Location = New System.Drawing.Point(7, 43)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(242, 17)
@@ -760,7 +1004,7 @@ Partial Class Form1
         Me.CheckBox2.Checked = True
         Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.Silver
+        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CheckBox2.Location = New System.Drawing.Point(7, 20)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(159, 17)
@@ -1548,135 +1792,6 @@ Partial Class Form1
         Me.CheckBox1.Text = "Pause at the End of Current Year"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'CheckBox12
-        '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Checked = True
-        Me.CheckBox12.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox12.ForeColor = System.Drawing.Color.Silver
-        Me.CheckBox12.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(100, 17)
-        Me.CheckBox12.TabIndex = 13
-        Me.CheckBox12.Text = "Affects Children"
-        Me.CheckBox12.UseVisualStyleBackColor = True
-        '
-        'CheckBox13
-        '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Checked = True
-        Me.CheckBox13.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox13.ForeColor = System.Drawing.Color.Silver
-        Me.CheckBox13.Location = New System.Drawing.Point(118, 63)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox13.TabIndex = 14
-        Me.CheckBox13.Text = "Affects Fertile"
-        Me.CheckBox13.UseVisualStyleBackColor = True
-        '
-        'CheckBox14
-        '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Checked = True
-        Me.CheckBox14.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox14.ForeColor = System.Drawing.Color.Silver
-        Me.CheckBox14.Location = New System.Drawing.Point(231, 63)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(93, 17)
-        Me.CheckBox14.TabIndex = 15
-        Me.CheckBox14.Text = "Affects Elderly"
-        Me.CheckBox14.UseVisualStyleBackColor = True
-        '
-        'Label71
-        '
-        Me.Label71.AutoSize = True
-        Me.Label71.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label71.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label71.Location = New System.Drawing.Point(35, 144)
-        Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(41, 13)
-        Me.Label71.TabIndex = 119
-        Me.Label71.Text = "Female"
-        '
-        'Label78
-        '
-        Me.Label78.AutoSize = True
-        Me.Label78.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label78.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label78.Location = New System.Drawing.Point(171, 144)
-        Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(41, 13)
-        Me.Label78.TabIndex = 120
-        Me.Label78.Text = "Female"
-        '
-        'Label79
-        '
-        Me.Label79.AutoSize = True
-        Me.Label79.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label79.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label79.Location = New System.Drawing.Point(308, 144)
-        Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(41, 13)
-        Me.Label79.TabIndex = 121
-        Me.Label79.Text = "Female"
-        '
-        'lblFemalePostFertile
-        '
-        Me.lblFemalePostFertile.AutoSize = True
-        Me.lblFemalePostFertile.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFemalePostFertile.ForeColor = System.Drawing.Color.Magenta
-        Me.lblFemalePostFertile.Location = New System.Drawing.Point(292, 170)
-        Me.lblFemalePostFertile.Name = "lblFemalePostFertile"
-        Me.lblFemalePostFertile.Size = New System.Drawing.Size(76, 16)
-        Me.lblFemalePostFertile.TabIndex = 126
-        Me.lblFemalePostFertile.Text = "From 51 to 100"
-        '
-        'lblFemaleFertile
-        '
-        Me.lblFemaleFertile.AutoSize = True
-        Me.lblFemaleFertile.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFemaleFertile.ForeColor = System.Drawing.Color.Magenta
-        Me.lblFemaleFertile.Location = New System.Drawing.Point(160, 170)
-        Me.lblFemaleFertile.Name = "lblFemaleFertile"
-        Me.lblFemaleFertile.Size = New System.Drawing.Size(71, 16)
-        Me.lblFemaleFertile.TabIndex = 125
-        Me.lblFemaleFertile.Text = "From 17 to 50"
-        '
-        'lblFemaleChild
-        '
-        Me.lblFemaleChild.AutoSize = True
-        Me.lblFemaleChild.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFemaleChild.ForeColor = System.Drawing.Color.Magenta
-        Me.lblFemaleChild.Location = New System.Drawing.Point(35, 170)
-        Me.lblFemaleChild.Name = "lblFemaleChild"
-        Me.lblFemaleChild.Size = New System.Drawing.Size(66, 16)
-        Me.lblFemaleChild.TabIndex = 124
-        Me.lblFemaleChild.Text = "From 0 to 16"
-        '
-        'HScrollBar5
-        '
-        Me.HScrollBar5.LargeChange = 1
-        Me.HScrollBar5.Location = New System.Drawing.Point(16, 189)
-        Me.HScrollBar5.Maximum = 1000
-        Me.HScrollBar5.Name = "HScrollBar5"
-        Me.HScrollBar5.Size = New System.Drawing.Size(158, 11)
-        Me.HScrollBar5.TabIndex = 123
-        Me.HScrollBar5.Value = 16
-        '
-        'HScrollBar6
-        '
-        Me.HScrollBar6.LargeChange = 1
-        Me.HScrollBar6.Location = New System.Drawing.Point(205, 189)
-        Me.HScrollBar6.Maximum = 1000
-        Me.HScrollBar6.Minimum = 4
-        Me.HScrollBar6.Name = "HScrollBar6"
-        Me.HScrollBar6.Size = New System.Drawing.Size(171, 11)
-        Me.HScrollBar6.TabIndex = 122
-        Me.HScrollBar6.Value = 51
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1825,4 +1940,12 @@ Partial Class Form1
     Friend WithEvents CheckBox14 As CheckBox
     Friend WithEvents CheckBox13 As CheckBox
     Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents Label80 As Label
+    Friend WithEvents Label81 As Label
+    Friend WithEvents Label86 As Label
+    Friend WithEvents Label87 As Label
+    Friend WithEvents Label84 As Label
+    Friend WithEvents Label85 As Label
+    Friend WithEvents Label83 As Label
+    Friend WithEvents Label82 As Label
 End Class

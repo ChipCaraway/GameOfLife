@@ -120,4 +120,8 @@
   <data name="Label70.Text" xml:space="preserve">
     <value>This tab is how Life is Configured.  If the checkbox is checked to "Pause at the End of Current Year," any updates to configurations on this tab will be read and applied during the operation of the next round (year).  This can be how disease is introduced.</value>
   </data>
+  <data name="Label80.Text" xml:space="preserve">
+    <value>Care should be used when selecting age ranges.  To much fertility will cause birth rates that will cause Universe Saturation which will cause a wait for elderly to die off, which can cause fertile lives to become post-fertile before re-creating lives.  As well, to small a fertility range and you stand a chance of not re-creating to allow for proper ranges of pre/post-fertile lives as well as fertile lives.
+.</value>
+  </data>
 </root>
