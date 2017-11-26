@@ -1,12 +1,14 @@
 ﻿Public Class Form1
 
     Structure Person
+        Dim PersonNumber As String
         Dim PersonType As String
         Dim FName As String
         Dim MName As String
         Dim Lname As String
         Dim Gender As String
         Dim Age As String
+        Dim MateNumber As String
         Dim ParentMale As String
         Dim ParentFemale As String
         Dim Reproductive As String
@@ -15,6 +17,9 @@
         Dim MoveThird As String
         Dim MoveForth As String
         Dim MateFirst As Boolean
+        Dim Sick As Boolean
+        Dim SickIncubation As Single
+        Dim SickContagiousness As Single
         Dim CurrentLeft As String
         Dim CurrentTop As String
     End Structure
@@ -43,9 +48,13 @@
         Dim IntroduceDisease As Boolean
         Dim AffectsMales As Boolean
         Dim AffectsFemales As Boolean
+        Dim AffectsChildren As Boolean
+        Dim AffectsFertile As Boolean
+        Dim AffectsElderly As Boolean
         Dim LivesInitiallyInfected As Single
         Dim IncubationPeriod As Single
         Dim Contagiosness As Double
+        Dim ModSeed As Integer
     End Structure
 
     Dim BMP As New Drawing.Bitmap(1000, 800)
@@ -53,6 +62,8 @@
     Public LastTop As Integer = 0
     Public LastLeft As Integer = 0
     Public Age(1) As GlobalAge
+    Public Cfg As GlobalConfig
+    Public Sick As GlobalDisease
     Public Universe(1000, 800) As Person
     Public Counts(1000, 1) As String
     Public FFname(100000) As String
@@ -61,14 +72,18 @@
     Public FFCount As Single = 0
     Public MFCount As Single = 0
     Public LCount As Single = 0
-
+    Public PersonNumberSeq As Double = 0
+    Public InitialPopulate As Boolean = False
     Public RunStamp = Format(Now, "yyyyMMdd_HHmmss")
+    Public FileName As String = "LOG_" + RunStamp + ".txt"
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim Rec As String = ""
         Dim N As Double = 0
+
+        FileOpen(13, FileName, OpenMode.Append)
 
         Counts(0, 0) = "LIFES"
         Counts(1, 0) = "MALES"
@@ -164,35 +179,40 @@
         FileClose(1)
 
         N = 0
-        FileOpen(1, "Female.First.txt", OpenMode.Input)
-        While Not EOF(1)
-            Rec = LineInput(1)
+        FileOpen(2, "Female.First.txt", OpenMode.Input)
+        While Not EOF(2)
+            Rec = LineInput(2)
             FFname(N) = Trim(Mid(Rec, 1, InStr(Rec, " ") - 1))
             N = N + 1
             Application.DoEvents()
         End While
-        FileClose(1)
+        FileClose(2)
 
         N = 0
-        FileOpen(1, "Last.txt", OpenMode.Input)
-        While Not EOF(1)
-            Rec = LineInput(1)
+        FileOpen(3, "Last.txt", OpenMode.Input)
+        While Not EOF(3)
+            Rec = LineInput(3)
             Lname(N) = Trim(Mid(Rec, 1, InStr(Rec, " ") - 1))
             N = N + 1
             Application.DoEvents()
         End While
-        FileClose(1)
+        FileClose(3)
 
 
         GFX.FillRectangle(Brushes.Black, 0, 0, 1000, 800)
         PictureBox1.Image = BMP
-        Label48.Text = Format(HScrollBar1.Value, "#,##0")
+        lblModSeed.Text = Format(HScrollBar1.Value, "#,##0")
         Label59.Text = Format(HScrollBar2.Value, "#,##0") + " Maximum Units of Age"
         HScrollBar3.Maximum = HScrollBar2.Value
         HScrollBar4.Maximum = HScrollBar2.Value
+        HScrollBar5.Maximum = HScrollBar2.Value
+        HScrollBar6.Maximum = HScrollBar2.Value
         lblMaleChild.Text = "From 0 to " + Format(HScrollBar3.Value, "#,##0")
         lblMaleFertile.Text = "From " + Format(HScrollBar3.Value + 1, "#,##0") + " to " + Format(HScrollBar4.Value - 1, "#,##0")
         lblMalePostFertile.Text = "From " + Format(HScrollBar4.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
+        lblFemaleChild.Text = "From 0 to " + Format(HScrollBar5.Value, "#,##0")
+        lblFemaleFertile.Text = "From " + Format(HScrollBar5.Value + 1, "#,##0") + " to " + Format(HScrollBar6.Value - 1, "#,##0")
+        lblFemalePostFertile.Text = "From " + Format(HScrollBar6.Value, "#,##0") + " to " + Format(HScrollBar2.Value, "#,##0")
 
         Age(0).MaleChild = 0
         Age(1).MaleChild = HScrollBar3.Value
@@ -200,13 +220,18 @@
         Age(1).MaleFertile = HScrollBar4.Value - 1
         Age(0).MalePostFertile = HScrollBar4.Value
         Age(1).MalePostFertile = HScrollBar2.Value
-
+        Age(0).FemaleChild = 0
+        Age(1).FemaleChild = HScrollBar5.Value
+        Age(0).FemaleFertile = HScrollBar5.Value + 1
+        Age(1).FemaleFertile = HScrollBar6.Value - 1
+        Age(0).FemalePostFertile = HScrollBar6.Value
+        Age(1).FemalePostFertile = HScrollBar2.Value
 
     End Sub
 
-    Public Function CreateLife(LastLeft As Single, LastTop As Single) As String
+    Public Function CreateUniversalLife(LastLeft As Single, LastTop As Single) As String
 
-        CreateLife = 0
+        CreateUniversalLife = 0
         Dim PercentMales As Double = 40
         Dim PercentFemales As Double = 60
         Dim PercentChild As Double = 33.2
@@ -214,20 +239,27 @@
         Dim PercentMenopausal As Double = 33.4
         Dim ImgFile As String = ""
 
+
         Dim Seed1 As Single = Val(Mid(Format(Now, "yyyyMMddHHmmsss"), 15, 1))
         Dim Seed2 As Single = Val(Mid(Format(Now, "yyyyMMddHHmmsss"), 14, 1))
         Dim Seed3 As Single = Val(Mid(Format(Now, "yyyyMMddHHmmsss"), 14, 2))
+
+        'RAND1 = Life or No Life
         Randomize()
-        Dim Rand1 As Integer = CInt(Math.Floor((3 - 1 + 1) * Rnd())) + 1
+        Dim Rand1 As Integer = CInt(Math.Floor((2 - 1 + 1) * Rnd())) + 1
+
+        'RAND2 = Male or Female
         Randomize()
-        Dim Rand2 As Integer = CInt(Math.Floor((100 - 1 + 1) * Rnd())) + 1
+        Dim Rand2 As Integer = CInt(Math.Floor((2 - 1 + 1) * Rnd())) + 1
+
+        'RAND3 = Age of Life
         Randomize()
-        Dim Rand3 As Integer = CInt(Math.Floor((100 - 1 + 1) * Rnd())) + 1
+        Dim Rand3 As Integer = CInt(Math.Floor((Age(1).MaxAge - 1 + 1) * Rnd())) + 1
 
         'MsgBox("(" + Str(Rand1) + "," + Str(Rand2) + "," + Str(Rand3) + ")")
 
         If Rand1 = 1 Then
-            CreateLife = "EMPTY"
+            CreateUniversalLife = "EMPTY"
             ImgFile = "BLANK.bmp"
             Universe(LastLeft, LastTop).PersonType = "BLANK"
             Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
@@ -235,9 +267,11 @@
             GoTo DRAW_IT
         End If
 
-        If Rand2 > 0 And Rand2 <= PercentMales Then
-            If Rand3 > 0 And Rand3 <= PercentChild Then
-                CreateLife = "MCW"
+        PersonNumberSeq = PersonNumberSeq + 1
+
+        If Rand2 = 1 Then
+            If Rand3 >= Age(0).MaleChild And Rand3 <= Age(1).MaleChild Then
+                CreateUniversalLife = "MCW"
                 ImgFile = "M_C_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(1, 1) = Val(Counts(1, 1)) + 1
@@ -257,12 +291,16 @@
                 Universe(LastLeft, LastTop).MoveThird = "U"
                 Universe(LastLeft, LastTop).MoveForth = "L"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
             End If
-            If Rand3 > PercentChild And Rand3 <= PercentChild + PercentFertile Then
-                CreateLife = "MFW"
+            If Rand3 >= Age(0).MaleFertile And Rand3 <= Age(1).MaleFertile Then
+                CreateUniversalLife = "MFW"
                 ImgFile = "M_F_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(1, 1) = Val(Counts(1, 1)) + 1
@@ -282,12 +320,16 @@
                 Universe(LastLeft, LastTop).MoveThird = "L"
                 Universe(LastLeft, LastTop).MoveForth = "R"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
             End If
-            If Rand3 > PercentChild + PercentFertile And Rand3 <= PercentChild + PercentFertile + PercentMenopausal Then
-                CreateLife = "MMW"
+            If Rand3 >= Age(0).MalePostFertile And Rand3 <= Age(1).MalePostFertile Then
+                CreateUniversalLife = "MMW"
                 ImgFile = "M_M_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(1, 1) = Val(Counts(1, 1)) + 1
@@ -307,14 +349,18 @@
                 Universe(LastLeft, LastTop).MoveThird = "R"
                 Universe(LastLeft, LastTop).MoveForth = "D"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
             End If
         End If
-        If Rand2 > PercentMales And Rand2 <= PercentMales + PercentFemales Then
-            If Rand3 > 0 And Rand3 <= PercentChild Then
-                CreateLife = "FCW"
+        If Rand2 = 2 Then
+            If Rand3 >= Age(0).FemaleChild And Rand3 <= Age(1).FemaleChild Then
+                CreateUniversalLife = "FCW"
                 ImgFile = "F_C_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(2, 1) = Val(Counts(2, 1)) + 1
@@ -334,12 +380,16 @@
                 Universe(LastLeft, LastTop).MoveThird = "U"
                 Universe(LastLeft, LastTop).MoveForth = "L"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
             End If
-            If Rand3 > PercentChild And Rand3 <= PercentChild + PercentFertile Then
-                CreateLife = "FFW"
+            If Rand3 >= Age(0).FemaleFertile And Rand3 <= Age(1).FemaleFertile Then
+                CreateUniversalLife = "FFW"
                 ImgFile = "F_F_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(2, 1) = Val(Counts(2, 1)) + 1
@@ -359,12 +409,16 @@
                 Universe(LastLeft, LastTop).MoveThird = "R"
                 Universe(LastLeft, LastTop).MoveForth = "D"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
             End If
-            If Rand3 > PercentChild + PercentFertile And Rand3 <= PercentChild + PercentFertile + PercentMenopausal Then
-                CreateLife = "FMW"
+            If Rand3 >= Age(0).FemalePostFertile And Rand3 <= Age(1).FemalePostFertile Then
+                CreateUniversalLife = "FMW"
                 ImgFile = "F_M_W.bmp"
                 Counts(0, 1) = Val(Counts(0, 1)) + 1
                 Counts(2, 1) = Val(Counts(2, 1)) + 1
@@ -384,6 +438,10 @@
                 Universe(LastLeft, LastTop).MoveThird = "U"
                 Universe(LastLeft, LastTop).MoveForth = "R"
                 Universe(LastLeft, LastTop).MateFirst = True
+                Universe(LastLeft, LastTop).Sick = False
+                Universe(LastLeft, LastTop).SickContagiousness = 0
+                Universe(LastLeft, LastTop).SickIncubation = 0
+                Universe(LastLeft, LastTop).PersonNumber = "P-" + Format(PersonNumberSeq, "00000")
                 Universe(LastLeft, LastTop).CurrentLeft = Trim(Str(LastLeft))
                 Universe(LastLeft, LastTop).CurrentTop = Trim(Str(LastTop))
                 GoTo DRAW_IT
@@ -396,7 +454,7 @@ DRAW_IT:
                   Universe(LastLeft, LastTop).CurrentTop + ") Created a " + Universe(LastLeft, LastTop).Reproductive +
                   " " + Universe(LastLeft, LastTop).Gender + " with age of " + Universe(LastLeft, LastTop).Age +
                   " named " + Universe(LastLeft, LastTop).FName + " " + Universe(LastLeft, LastTop).MName + " " +
-                  Universe(LastLeft, LastTop).Lname + ". . .")
+                  Universe(LastLeft, LastTop).Lname + " (Person#: " + Universe(LastLeft, LastTop).PersonNumber + ") . . .")
         End If
         GFX.DrawImage(Image.FromFile(ImgFile), LastLeft, LastTop)
         PictureBox1.Image = BMP
@@ -435,7 +493,7 @@ DRAW_IT:
 
         'GFX.DrawImage(Image.FromFile("F_C_W.bmp"), LastLeft, LastTop)
         While LastTop < 800
-            CreateLife(LastLeft, LastTop)
+            CreateUniversalLife(LastLeft, LastTop)
             LastLeft = LastLeft + 10
             If LastLeft > 1000 Then
                 LastLeft = 0
@@ -449,18 +507,16 @@ DRAW_IT:
 
 BAIL_OUT:
         Button1.Enabled = False
+        Button3.Enabled = True
 
     End Sub
 
     Public Function ToLog(Type As String, Rec As String)
 
         ToLog = 0
-        Dim FileName As String = "LOG_" + RunStamp + ".txt"
-        FileOpen(1, FileName, OpenMode.Append)
-        Print(1, Format(Now, "yyyy-MM-dd HH:mm:sss") + "|" + Type + "|" + Rec + vbCrLf)
+        Print(13, Format(Now, "yyyy-MM-dd HH:mm:sss") + "|" + Type + "|" + Rec + vbCrLf)
         ListBox1.Items.Add(Type + "|" + Rec)
         ListBox1.SelectedIndex = ListBox1.Items.Count - 1
-        FileClose(1)
         Application.DoEvents()
 
     End Function
@@ -518,7 +574,7 @@ BAIL_OUT:
 
     Private Sub HScrollBar1_Scroll(sender As Object, e As ScrollEventArgs) Handles HScrollBar1.Scroll
 
-        Label48.Text = HScrollBar1.Value
+        lblModSeed.Text = HScrollBar1.Value
 
     End Sub
 
@@ -595,6 +651,118 @@ Check_Again:
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+        LoadConfig()
+        Button2.Enabled = False
+        If InitialPopulate = False Then
+            Button1.Enabled = True
+            InitialPopulate = True
+        End If
+        If CheckBox1.Checked = True Then
+            Label48.Text = "The Saved Configuration will be used for year " + Counts(6, 1) + "."
+        Else
+            Label48.Text = "The Saved Configuration will be used from year " + Counts(6, 1) + " indefinately..."
+        End If
+
+    End Sub
+
+    Public Function LoadConfig()
+
+        LoadConfig = 0
+        Age(0).MaxAge = 0
+        Age(1).MaxAge = HScrollBar2.Value
+        Age(0).MaleChild = 0
+        Age(1).MaleChild = HScrollBar3.Value
+        Age(0).MaleFertile = HScrollBar3.Value + 1
+        Age(1).MaleFertile = HScrollBar4.Value - 1
+        Age(0).MalePostFertile = HScrollBar4.Value
+        Age(1).MalePostFertile = HScrollBar2.Value
+        Age(0).FemaleChild = 0
+        Age(1).FemaleChild = HScrollBar5.Value
+        Age(0).FemaleFertile = HScrollBar5.Value + 1
+        Age(1).FemaleFertile = HScrollBar6.Value - 1
+        Age(0).FemalePostFertile = HScrollBar6.Value
+        Age(1).FemalePostFertile = HScrollBar2.Value
+
+        If lblPairsForLife.Checked = True Then
+            Cfg.PairsForLife = True
+        Else
+            Cfg.PairsForLife = False
+        End If
+        If lblOffspringTouchParent.Checked = True Then
+            Cfg.OffspringTouchesParent = True
+        Else
+            Cfg.OffspringTouchesParent = False
+        End If
+        If lblPreFertileNoMove.Checked = True Then
+            Cfg.PreFertileDoesNotMove = True
+        Else
+            Cfg.PreFertileDoesNotMove = False
+        End If
+        If lblPostFertileNoMove.Checked = True Then
+            Cfg.PostFertileDoesNotMove = True
+        Else
+            Cfg.PostFertileDoesNotMove = False
+        End If
+        If lblFertileMovesToFertileSpot.Checked = True Then
+            Cfg.NonPairedMovesToFertileSpot = True
+        Else
+            Cfg.NonPairedMovesToFertileSpot = False
+        End If
+        If lblFertileMovesToBlankSpot.Checked = True Then
+            Cfg.NonPairedMovesToNextSpot = True
+        Else
+            Cfg.NonPairedMovesToNextSpot = False
+        End If
+        If lblAccidentalDeath.Checked = True Then
+            Cfg.AccidentalDeath = True
+        Else
+            Cfg.AccidentalDeath = False
+        End If
+
+        Sick.IntroduceDisease = lblIntroduceDisease.Checked
+        Sick.AffectsMales = lblAffectsMales.Checked
+        Sick.AffectsFemales = lblAffectsFemales.Checked
+        Sick.AffectsChildren = lblAffectsChildren.Checked
+        Sick.AffectsFertile = lblAffectsFertile.Checked
+        Sick.AffectsElderly = lblAffectsElderly.Checked
+        Sick.ModSeed = Val(lblModSeed.Text)
+        Sick.LivesInitiallyInfected = cmbLivesAffected.SelectedIndex + 1
+        Sick.IncubationPeriod = cmbIncubation.SelectedIndex + 1
+
+        Select Case cmbContagiousness.SelectedIndex
+            Case 0
+                Sick.Contagiosness = 0.25
+            Case 1
+                Sick.Contagiosness = 0.5
+            Case 2
+                Sick.Contagiosness = 0.75
+            Case 3
+                Sick.Contagiosness = 0.9
+            Case Else
+                Sick.Contagiosness = 0.25
+        End Select
+
+    End Function
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+        If CheckBox1.Checked = True Then
+            Button3.Text = "STEP 3:  Execute a Year's Worth of Life"
+        Else
+            Button3.Text = "STEP 3:  Execute Life Indefinately"
+        End If
+        If CheckBox1.Checked = True Then
+            If Label48.Text <> "Press Button to Save Config" Then
+                Label48.Text = "The Saved Configuration will be used for year " + Counts(6, 1) + "."
+            End If
+        Else
+            If Label48.Text <> "Press Button to Save Config" Then
+                Label48.Text = "The Saved Configuration will be used from year " + Counts(6, 1) + " indefinately..."
+            End If
+        End If
+
+    End Sub
 
 End Class

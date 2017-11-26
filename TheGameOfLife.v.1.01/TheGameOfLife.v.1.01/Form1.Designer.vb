@@ -67,29 +67,29 @@ Partial Class Form1
         Me.Label83 = New System.Windows.Forms.Label()
         Me.Label82 = New System.Windows.Forms.Label()
         Me.Label81 = New System.Windows.Forms.Label()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.lblAffectsElderly = New System.Windows.Forms.CheckBox()
+        Me.lblAffectsFertile = New System.Windows.Forms.CheckBox()
+        Me.lblAffectsChildren = New System.Windows.Forms.CheckBox()
+        Me.lblAffectsFemales = New System.Windows.Forms.CheckBox()
+        Me.lblAffectsMales = New System.Windows.Forms.CheckBox()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cmbContagiousness = New System.Windows.Forms.ComboBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cmbIncubation = New System.Windows.Forms.ComboBox()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label48 = New System.Windows.Forms.Label()
+        Me.cmbLivesAffected = New System.Windows.Forms.ComboBox()
+        Me.lblModSeed = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.lblIntroduceDisease = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.lblAccidentalDeath = New System.Windows.Forms.CheckBox()
+        Me.lblPreFertileNoMove = New System.Windows.Forms.CheckBox()
+        Me.lblFertileMovesToBlankSpot = New System.Windows.Forms.CheckBox()
+        Me.lblFertileMovesToFertileSpot = New System.Windows.Forms.CheckBox()
+        Me.lblPostFertileNoMove = New System.Windows.Forms.CheckBox()
+        Me.lblOffspringTouchParent = New System.Windows.Forms.CheckBox()
+        Me.lblPairsForLife = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label55 = New System.Windows.Forms.Label()
@@ -147,8 +147,11 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label48 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -173,6 +176,8 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Black
+        Me.TabPage1.Controls.Add(Me.Label48)
+        Me.TabPage1.Controls.Add(Me.Button2)
         Me.TabPage1.Controls.Add(Me.Label70)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
@@ -602,21 +607,21 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.Label83)
         Me.GroupBox2.Controls.Add(Me.Label82)
         Me.GroupBox2.Controls.Add(Me.Label81)
-        Me.GroupBox2.Controls.Add(Me.CheckBox14)
-        Me.GroupBox2.Controls.Add(Me.CheckBox13)
-        Me.GroupBox2.Controls.Add(Me.CheckBox12)
-        Me.GroupBox2.Controls.Add(Me.CheckBox10)
-        Me.GroupBox2.Controls.Add(Me.CheckBox9)
+        Me.GroupBox2.Controls.Add(Me.lblAffectsElderly)
+        Me.GroupBox2.Controls.Add(Me.lblAffectsFertile)
+        Me.GroupBox2.Controls.Add(Me.lblAffectsChildren)
+        Me.GroupBox2.Controls.Add(Me.lblAffectsFemales)
+        Me.GroupBox2.Controls.Add(Me.lblAffectsMales)
         Me.GroupBox2.Controls.Add(Me.Label51)
-        Me.GroupBox2.Controls.Add(Me.ComboBox3)
+        Me.GroupBox2.Controls.Add(Me.cmbContagiousness)
         Me.GroupBox2.Controls.Add(Me.Label50)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
+        Me.GroupBox2.Controls.Add(Me.cmbIncubation)
         Me.GroupBox2.Controls.Add(Me.Label49)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.cmbLivesAffected)
+        Me.GroupBox2.Controls.Add(Me.lblModSeed)
         Me.GroupBox2.Controls.Add(Me.Label47)
         Me.GroupBox2.Controls.Add(Me.HScrollBar1)
-        Me.GroupBox2.Controls.Add(Me.CheckBox8)
+        Me.GroupBox2.Controls.Add(Me.lblIntroduceDisease)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Lime
@@ -711,75 +716,75 @@ Partial Class Form1
         Me.Label81.TabIndex = 104
         Me.Label81.Text = " "
         '
-        'CheckBox14
+        'lblAffectsElderly
         '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Checked = True
-        Me.CheckBox14.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox14.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox14.Location = New System.Drawing.Point(268, 65)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(93, 17)
-        Me.CheckBox14.TabIndex = 15
-        Me.CheckBox14.Text = "Affects Elderly"
-        Me.CheckBox14.UseVisualStyleBackColor = True
+        Me.lblAffectsElderly.AutoSize = True
+        Me.lblAffectsElderly.Checked = True
+        Me.lblAffectsElderly.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAffectsElderly.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAffectsElderly.ForeColor = System.Drawing.Color.Lime
+        Me.lblAffectsElderly.Location = New System.Drawing.Point(268, 65)
+        Me.lblAffectsElderly.Name = "lblAffectsElderly"
+        Me.lblAffectsElderly.Size = New System.Drawing.Size(93, 17)
+        Me.lblAffectsElderly.TabIndex = 15
+        Me.lblAffectsElderly.Text = "Affects Elderly"
+        Me.lblAffectsElderly.UseVisualStyleBackColor = True
         '
-        'CheckBox13
+        'lblAffectsFertile
         '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Checked = True
-        Me.CheckBox13.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox13.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox13.Location = New System.Drawing.Point(143, 65)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox13.TabIndex = 14
-        Me.CheckBox13.Text = "Affects Fertile"
-        Me.CheckBox13.UseVisualStyleBackColor = True
+        Me.lblAffectsFertile.AutoSize = True
+        Me.lblAffectsFertile.Checked = True
+        Me.lblAffectsFertile.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAffectsFertile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAffectsFertile.ForeColor = System.Drawing.Color.Lime
+        Me.lblAffectsFertile.Location = New System.Drawing.Point(143, 65)
+        Me.lblAffectsFertile.Name = "lblAffectsFertile"
+        Me.lblAffectsFertile.Size = New System.Drawing.Size(90, 17)
+        Me.lblAffectsFertile.TabIndex = 14
+        Me.lblAffectsFertile.Text = "Affects Fertile"
+        Me.lblAffectsFertile.UseVisualStyleBackColor = True
         '
-        'CheckBox12
+        'lblAffectsChildren
         '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Checked = True
-        Me.CheckBox12.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox12.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox12.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(100, 17)
-        Me.CheckBox12.TabIndex = 13
-        Me.CheckBox12.Text = "Affects Children"
-        Me.CheckBox12.UseVisualStyleBackColor = True
+        Me.lblAffectsChildren.AutoSize = True
+        Me.lblAffectsChildren.Checked = True
+        Me.lblAffectsChildren.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAffectsChildren.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAffectsChildren.ForeColor = System.Drawing.Color.Lime
+        Me.lblAffectsChildren.Location = New System.Drawing.Point(9, 65)
+        Me.lblAffectsChildren.Name = "lblAffectsChildren"
+        Me.lblAffectsChildren.Size = New System.Drawing.Size(100, 17)
+        Me.lblAffectsChildren.TabIndex = 13
+        Me.lblAffectsChildren.Text = "Affects Children"
+        Me.lblAffectsChildren.UseVisualStyleBackColor = True
         '
-        'CheckBox10
+        'lblAffectsFemales
         '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Checked = True
-        Me.CheckBox10.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox10.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox10.Location = New System.Drawing.Point(143, 42)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox10.TabIndex = 12
-        Me.CheckBox10.Text = "Affects Females"
-        Me.CheckBox10.UseVisualStyleBackColor = True
+        Me.lblAffectsFemales.AutoSize = True
+        Me.lblAffectsFemales.Checked = True
+        Me.lblAffectsFemales.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAffectsFemales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAffectsFemales.ForeColor = System.Drawing.Color.Lime
+        Me.lblAffectsFemales.Location = New System.Drawing.Point(143, 42)
+        Me.lblAffectsFemales.Name = "lblAffectsFemales"
+        Me.lblAffectsFemales.Size = New System.Drawing.Size(101, 17)
+        Me.lblAffectsFemales.TabIndex = 12
+        Me.lblAffectsFemales.Text = "Affects Females"
+        Me.lblAffectsFemales.UseVisualStyleBackColor = True
         '
-        'CheckBox9
+        'lblAffectsMales
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Checked = True
-        Me.CheckBox9.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox9.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox9.Location = New System.Drawing.Point(8, 42)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox9.TabIndex = 11
-        Me.CheckBox9.Text = "Affects Males"
-        Me.CheckBox9.UseVisualStyleBackColor = True
+        Me.lblAffectsMales.AutoSize = True
+        Me.lblAffectsMales.Checked = True
+        Me.lblAffectsMales.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAffectsMales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAffectsMales.ForeColor = System.Drawing.Color.Lime
+        Me.lblAffectsMales.Location = New System.Drawing.Point(8, 42)
+        Me.lblAffectsMales.Name = "lblAffectsMales"
+        Me.lblAffectsMales.Size = New System.Drawing.Size(90, 17)
+        Me.lblAffectsMales.TabIndex = 11
+        Me.lblAffectsMales.Text = "Affects Males"
+        Me.lblAffectsMales.UseVisualStyleBackColor = True
         '
         'Label51
         '
@@ -792,18 +797,18 @@ Partial Class Form1
         Me.Label51.TabIndex = 10
         Me.Label51.Text = "Contagiousness:"
         '
-        'ComboBox3
+        'cmbContagiousness
         '
-        Me.ComboBox3.BackColor = System.Drawing.Color.Black
-        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.ForeColor = System.Drawing.Color.Lime
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Light (25%)", "Moderate (50%)", "High (75%)", "OMG (90%)"})
-        Me.ComboBox3.Location = New System.Drawing.Point(257, 173)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(123, 21)
-        Me.ComboBox3.TabIndex = 9
+        Me.cmbContagiousness.BackColor = System.Drawing.Color.Black
+        Me.cmbContagiousness.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbContagiousness.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbContagiousness.ForeColor = System.Drawing.Color.Lime
+        Me.cmbContagiousness.FormattingEnabled = True
+        Me.cmbContagiousness.Items.AddRange(New Object() {"Light (25%)", "Moderate (50%)", "High (75%)", "OMG (90%)"})
+        Me.cmbContagiousness.Location = New System.Drawing.Point(257, 173)
+        Me.cmbContagiousness.Name = "cmbContagiousness"
+        Me.cmbContagiousness.Size = New System.Drawing.Size(123, 21)
+        Me.cmbContagiousness.TabIndex = 9
         '
         'Label50
         '
@@ -816,18 +821,18 @@ Partial Class Form1
         Me.Label50.TabIndex = 8
         Me.Label50.Text = "Incubation Period:"
         '
-        'ComboBox2
+        'cmbIncubation
         '
-        Me.ComboBox2.BackColor = System.Drawing.Color.Black
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.ForeColor = System.Drawing.Color.Lime
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"One Year (1)", "Two Years (2)", "Three Years (3)", "Four Years (4)", "Five Years (5)", "Six Years (6)", "Seven Years (7)", "Eight Years (8)", "Nine Years (9)", "Ten Years (10)"})
-        Me.ComboBox2.Location = New System.Drawing.Point(134, 173)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(110, 21)
-        Me.ComboBox2.TabIndex = 7
+        Me.cmbIncubation.BackColor = System.Drawing.Color.Black
+        Me.cmbIncubation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbIncubation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbIncubation.ForeColor = System.Drawing.Color.Lime
+        Me.cmbIncubation.FormattingEnabled = True
+        Me.cmbIncubation.Items.AddRange(New Object() {"One Year (1)", "Two Years (2)", "Three Years (3)", "Four Years (4)", "Five Years (5)", "Six Years (6)", "Seven Years (7)", "Eight Years (8)", "Nine Years (9)", "Ten Years (10)"})
+        Me.cmbIncubation.Location = New System.Drawing.Point(134, 173)
+        Me.cmbIncubation.Name = "cmbIncubation"
+        Me.cmbIncubation.Size = New System.Drawing.Size(110, 21)
+        Me.cmbIncubation.TabIndex = 7
         '
         'Label49
         '
@@ -840,28 +845,28 @@ Partial Class Form1
         Me.Label49.TabIndex = 6
         Me.Label49.Text = "Lifes Initially Infected:"
         '
-        'ComboBox1
+        'cmbLivesAffected
         '
-        Me.ComboBox1.BackColor = System.Drawing.Color.Black
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.ForeColor = System.Drawing.Color.Lime
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"One Life (1)", "Two Lives (2)", "Three Lives (3)", "Four Lives (4)", "Five Lives (5)", "Six Lives (6)", "Seven Lives (7)", "Eight Lives (8)", "Nine Lives (9)", "Ten Lives (10)"})
-        Me.ComboBox1.Location = New System.Drawing.Point(9, 173)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(110, 21)
-        Me.ComboBox1.TabIndex = 5
+        Me.cmbLivesAffected.BackColor = System.Drawing.Color.Black
+        Me.cmbLivesAffected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbLivesAffected.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLivesAffected.ForeColor = System.Drawing.Color.Lime
+        Me.cmbLivesAffected.FormattingEnabled = True
+        Me.cmbLivesAffected.Items.AddRange(New Object() {"One Life (1)", "Two Lives (2)", "Three Lives (3)", "Four Lives (4)", "Five Lives (5)", "Six Lives (6)", "Seven Lives (7)", "Eight Lives (8)", "Nine Lives (9)", "Ten Lives (10)"})
+        Me.cmbLivesAffected.Location = New System.Drawing.Point(9, 173)
+        Me.cmbLivesAffected.Name = "cmbLivesAffected"
+        Me.cmbLivesAffected.Size = New System.Drawing.Size(110, 21)
+        Me.cmbLivesAffected.TabIndex = 5
         '
-        'Label48
+        'lblModSeed
         '
-        Me.Label48.AutoSize = True
-        Me.Label48.ForeColor = System.Drawing.Color.Lime
-        Me.Label48.Location = New System.Drawing.Point(292, 107)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(14, 13)
-        Me.Label48.TabIndex = 4
-        Me.Label48.Text = "1"
+        Me.lblModSeed.AutoSize = True
+        Me.lblModSeed.ForeColor = System.Drawing.Color.Lime
+        Me.lblModSeed.Location = New System.Drawing.Point(292, 107)
+        Me.lblModSeed.Name = "lblModSeed"
+        Me.lblModSeed.Size = New System.Drawing.Size(14, 13)
+        Me.lblModSeed.TabIndex = 4
+        Me.lblModSeed.Text = "1"
         '
         'Label47
         '
@@ -884,28 +889,28 @@ Partial Class Form1
         Me.HScrollBar1.TabIndex = 2
         Me.HScrollBar1.Value = 1
         '
-        'CheckBox8
+        'lblIntroduceDisease
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox8.ForeColor = System.Drawing.Color.Lime
-        Me.CheckBox8.Location = New System.Drawing.Point(7, 19)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(129, 17)
-        Me.CheckBox8.TabIndex = 1
-        Me.CheckBox8.Text = "Introduce Disease"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.lblIntroduceDisease.AutoSize = True
+        Me.lblIntroduceDisease.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntroduceDisease.ForeColor = System.Drawing.Color.Lime
+        Me.lblIntroduceDisease.Location = New System.Drawing.Point(7, 19)
+        Me.lblIntroduceDisease.Name = "lblIntroduceDisease"
+        Me.lblIntroduceDisease.Size = New System.Drawing.Size(129, 17)
+        Me.lblIntroduceDisease.TabIndex = 1
+        Me.lblIntroduceDisease.Text = "Introduce Disease"
+        Me.lblIntroduceDisease.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Black
-        Me.GroupBox1.Controls.Add(Me.CheckBox11)
-        Me.GroupBox1.Controls.Add(Me.CheckBox7)
-        Me.GroupBox1.Controls.Add(Me.CheckBox6)
-        Me.GroupBox1.Controls.Add(Me.CheckBox5)
-        Me.GroupBox1.Controls.Add(Me.CheckBox4)
-        Me.GroupBox1.Controls.Add(Me.CheckBox3)
-        Me.GroupBox1.Controls.Add(Me.CheckBox2)
+        Me.GroupBox1.Controls.Add(Me.lblAccidentalDeath)
+        Me.GroupBox1.Controls.Add(Me.lblPreFertileNoMove)
+        Me.GroupBox1.Controls.Add(Me.lblFertileMovesToBlankSpot)
+        Me.GroupBox1.Controls.Add(Me.lblFertileMovesToFertileSpot)
+        Me.GroupBox1.Controls.Add(Me.lblPostFertileNoMove)
+        Me.GroupBox1.Controls.Add(Me.lblOffspringTouchParent)
+        Me.GroupBox1.Controls.Add(Me.lblPairsForLife)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Gold
@@ -916,101 +921,101 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Universe Configuation Options"
         '
-        'CheckBox11
+        'lblAccidentalDeath
         '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Checked = True
-        Me.CheckBox11.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox11.Location = New System.Drawing.Point(7, 158)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(301, 17)
-        Me.CheckBox11.TabIndex = 6
-        Me.CheckBox11.Text = "Life can cease by Accidental Death (ie. Death by Chance)"
-        Me.CheckBox11.UseVisualStyleBackColor = True
+        Me.lblAccidentalDeath.AutoSize = True
+        Me.lblAccidentalDeath.Checked = True
+        Me.lblAccidentalDeath.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblAccidentalDeath.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAccidentalDeath.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblAccidentalDeath.Location = New System.Drawing.Point(7, 158)
+        Me.lblAccidentalDeath.Name = "lblAccidentalDeath"
+        Me.lblAccidentalDeath.Size = New System.Drawing.Size(301, 17)
+        Me.lblAccidentalDeath.TabIndex = 6
+        Me.lblAccidentalDeath.Text = "Life can cease by Accidental Death (ie. Death by Chance)"
+        Me.lblAccidentalDeath.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'lblPreFertileNoMove
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Checked = True
-        Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox7.Location = New System.Drawing.Point(7, 66)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(174, 17)
-        Me.CheckBox7.TabIndex = 5
-        Me.CheckBox7.Text = "Pre-Fertile Lives do NOT move."
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.lblPreFertileNoMove.AutoSize = True
+        Me.lblPreFertileNoMove.Checked = True
+        Me.lblPreFertileNoMove.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblPreFertileNoMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPreFertileNoMove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblPreFertileNoMove.Location = New System.Drawing.Point(7, 66)
+        Me.lblPreFertileNoMove.Name = "lblPreFertileNoMove"
+        Me.lblPreFertileNoMove.Size = New System.Drawing.Size(174, 17)
+        Me.lblPreFertileNoMove.TabIndex = 5
+        Me.lblPreFertileNoMove.Text = "Pre-Fertile Lives do NOT move."
+        Me.lblPreFertileNoMove.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'lblFertileMovesToBlankSpot
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Checked = True
-        Me.CheckBox6.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox6.Location = New System.Drawing.Point(7, 135)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(273, 17)
-        Me.CheckBox6.TabIndex = 4
-        Me.CheckBox6.Text = "Fertile Non-Paired Lives will move to first blank spot. "
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.lblFertileMovesToBlankSpot.AutoSize = True
+        Me.lblFertileMovesToBlankSpot.Checked = True
+        Me.lblFertileMovesToBlankSpot.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblFertileMovesToBlankSpot.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFertileMovesToBlankSpot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblFertileMovesToBlankSpot.Location = New System.Drawing.Point(7, 135)
+        Me.lblFertileMovesToBlankSpot.Name = "lblFertileMovesToBlankSpot"
+        Me.lblFertileMovesToBlankSpot.Size = New System.Drawing.Size(273, 17)
+        Me.lblFertileMovesToBlankSpot.TabIndex = 4
+        Me.lblFertileMovesToBlankSpot.Text = "Fertile Non-Paired Lives will move to first blank spot. "
+        Me.lblFertileMovesToBlankSpot.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'lblFertileMovesToFertileSpot
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox5.Location = New System.Drawing.Point(7, 112)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(320, 17)
-        Me.CheckBox5.TabIndex = 3
-        Me.CheckBox5.Text = "Fertile Non-Paired Lives will move to first FERTILE blank spot. "
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.lblFertileMovesToFertileSpot.AutoSize = True
+        Me.lblFertileMovesToFertileSpot.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFertileMovesToFertileSpot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblFertileMovesToFertileSpot.Location = New System.Drawing.Point(7, 112)
+        Me.lblFertileMovesToFertileSpot.Name = "lblFertileMovesToFertileSpot"
+        Me.lblFertileMovesToFertileSpot.Size = New System.Drawing.Size(320, 17)
+        Me.lblFertileMovesToFertileSpot.TabIndex = 3
+        Me.lblFertileMovesToFertileSpot.Text = "Fertile Non-Paired Lives will move to first FERTILE blank spot. "
+        Me.lblFertileMovesToFertileSpot.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'lblPostFertileNoMove
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Checked = True
-        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox4.Location = New System.Drawing.Point(7, 89)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(179, 17)
-        Me.CheckBox4.TabIndex = 2
-        Me.CheckBox4.Text = "Post-Fertile Lives do NOT move."
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.lblPostFertileNoMove.AutoSize = True
+        Me.lblPostFertileNoMove.Checked = True
+        Me.lblPostFertileNoMove.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblPostFertileNoMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPostFertileNoMove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblPostFertileNoMove.Location = New System.Drawing.Point(7, 89)
+        Me.lblPostFertileNoMove.Name = "lblPostFertileNoMove"
+        Me.lblPostFertileNoMove.Size = New System.Drawing.Size(179, 17)
+        Me.lblPostFertileNoMove.TabIndex = 2
+        Me.lblPostFertileNoMove.Text = "Post-Fertile Lives do NOT move."
+        Me.lblPostFertileNoMove.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'lblOffspringTouchParent
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Checked = True
-        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox3.Location = New System.Drawing.Point(7, 43)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(242, 17)
-        Me.CheckBox3.TabIndex = 1
-        Me.CheckBox3.Text = "Offspring must touch either Parent until Fertile."
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.lblOffspringTouchParent.AutoSize = True
+        Me.lblOffspringTouchParent.Checked = True
+        Me.lblOffspringTouchParent.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblOffspringTouchParent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOffspringTouchParent.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblOffspringTouchParent.Location = New System.Drawing.Point(7, 43)
+        Me.lblOffspringTouchParent.Name = "lblOffspringTouchParent"
+        Me.lblOffspringTouchParent.Size = New System.Drawing.Size(242, 17)
+        Me.lblOffspringTouchParent.TabIndex = 1
+        Me.lblOffspringTouchParent.Text = "Offspring must touch either Parent until Fertile."
+        Me.lblOffspringTouchParent.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'lblPairsForLife
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Checked = True
-        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox2.Location = New System.Drawing.Point(7, 20)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(159, 17)
-        Me.CheckBox2.TabIndex = 0
-        Me.CheckBox2.Text = "Pairs that mate, mate for life."
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.lblPairsForLife.AutoSize = True
+        Me.lblPairsForLife.Checked = True
+        Me.lblPairsForLife.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lblPairsForLife.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPairsForLife.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblPairsForLife.Location = New System.Drawing.Point(7, 20)
+        Me.lblPairsForLife.Name = "lblPairsForLife"
+        Me.lblPairsForLife.Size = New System.Drawing.Size(159, 17)
+        Me.lblPairsForLife.TabIndex = 0
+        Me.lblPairsForLife.Text = "Pairs that mate, mate for life."
+        Me.lblPairsForLife.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -1766,20 +1771,6 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(1273, 788)
         Me.ListBox1.TabIndex = 0
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.Lime
-        Me.Button1.Location = New System.Drawing.Point(6, 853)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Populate"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
@@ -1792,12 +1783,66 @@ Partial Class Form1
         Me.CheckBox1.Text = "Pause at the End of Current Year"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.Enabled = False
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Lime
+        Me.Button1.Location = New System.Drawing.Point(19, 853)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(230, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "STEP 2:  Populate The Universe "
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.Lime
+        Me.Button2.Location = New System.Drawing.Point(13, 780)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(230, 23)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "STEP 1:  Run With This Configuration"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.Enabled = False
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.Lime
+        Me.Button3.Location = New System.Drawing.Point(272, 853)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(230, 23)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "STEP 3:  Execute a Year's Worth of Life"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(263, 785)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(140, 13)
+        Me.Label48.TabIndex = 5
+        Me.Label48.Text = "Press Button to Save Config"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1311, 887)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TabControl1)
@@ -1807,6 +1852,7 @@ Partial Class Form1
         Me.Text = "The Game of Life v.1.01"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1873,29 +1919,28 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents lblOffspringTouchParent As CheckBox
+    Friend WithEvents lblPairsForLife As CheckBox
+    Friend WithEvents lblPostFertileNoMove As CheckBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label48 As Label
+    Friend WithEvents lblModSeed As Label
     Friend WithEvents Label47 As Label
     Friend WithEvents HScrollBar1 As HScrollBar
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents lblIntroduceDisease As CheckBox
+    Friend WithEvents lblPreFertileNoMove As CheckBox
+    Friend WithEvents lblFertileMovesToBlankSpot As CheckBox
+    Friend WithEvents lblFertileMovesToFertileSpot As CheckBox
     Friend WithEvents Label49 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbLivesAffected As ComboBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents cmbIncubation As ComboBox
+    Friend WithEvents lblAffectsFemales As CheckBox
+    Friend WithEvents lblAffectsMales As CheckBox
     Friend WithEvents Label51 As Label
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cmbContagiousness As ComboBox
     Friend WithEvents Label54 As Label
     Friend WithEvents Label53 As Label
     Friend WithEvents Label52 As Label
@@ -1928,7 +1973,7 @@ Partial Class Form1
     Friend WithEvents Label62 As Label
     Friend WithEvents Label63 As Label
     Friend WithEvents Label70 As Label
-    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents lblAccidentalDeath As CheckBox
     Friend WithEvents lblFemalePostFertile As Label
     Friend WithEvents lblFemaleFertile As Label
     Friend WithEvents lblFemaleChild As Label
@@ -1937,9 +1982,9 @@ Partial Class Form1
     Friend WithEvents Label79 As Label
     Friend WithEvents Label78 As Label
     Friend WithEvents Label71 As Label
-    Friend WithEvents CheckBox14 As CheckBox
-    Friend WithEvents CheckBox13 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents lblAffectsElderly As CheckBox
+    Friend WithEvents lblAffectsFertile As CheckBox
+    Friend WithEvents lblAffectsChildren As CheckBox
     Friend WithEvents Label80 As Label
     Friend WithEvents Label81 As Label
     Friend WithEvents Label86 As Label
@@ -1948,4 +1993,8 @@ Partial Class Form1
     Friend WithEvents Label85 As Label
     Friend WithEvents Label83 As Label
     Friend WithEvents Label82 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Button3 As Button
 End Class

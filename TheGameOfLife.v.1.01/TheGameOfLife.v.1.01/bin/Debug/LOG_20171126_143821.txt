@@ -1,0 +1,2 @@
+2017-11-26 14:40:31|CREATE WORLD|(0,0) Created a FERTILE FEMALE with age of 44 named MARY U SMITH (Person#: P-00001) . . .
+2017-11-26 14:40:31|CREATE WORLD|(,) Created a   with age of  named    (Person#: ) . . .
